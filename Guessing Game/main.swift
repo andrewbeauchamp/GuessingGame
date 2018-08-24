@@ -28,19 +28,20 @@ repeat {
         //Get user imput again
         userGuess = Int (readLine( )! )
     }
-
+    
     if userGuess == randomNumber {
-        var userResponse = readLine( )! .uppercased( )
         print("Great Work!")
+        print("Would you like to play again? Y/N")
+        var userResponse = readLine( )!.uppercased()
+        
         while userResponse != "Y" && userResponse != "N" {
             print("Would you like to play again? Y/N")
-            userResponse = readLine( )!
-            if userResponse ==  "N" {
-                playingGame = false
-            }
-            
+            userResponse = readLine( )!.uppercased()
         }
         
+        if userResponse ==  "N" {
+            playingGame = false
+        }
     }
     while numberOfGuesses > 1 && userGuess != randomNumber {
         if userGuess! < randomNumber {
@@ -69,8 +70,6 @@ repeat {
         }
         
     }
-    
-    
 }  while playingGame == true
 
 
